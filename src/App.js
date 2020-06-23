@@ -1,13 +1,10 @@
 import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import Test from './components/testUseState'
 
 function App() {
   return (
     <div className="App">
-     李智大傻逼
-     呵呵呵  
-     一个大傻逼噢~
+      <Test/>
     </div>
   );
 }

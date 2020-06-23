@@ -6,6 +6,8 @@ function App() {
   return (
     <div className="App">
      李智大傻逼
+     呵呵呵  
+     一个大傻逼噢~
     </div>
   );
 }

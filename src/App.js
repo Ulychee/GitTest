@@ -1,10 +1,10 @@
 import React from 'react';
-import Test from './components/testUseState'
+import Main from './components/Index'
 
 function App() {
   return (
     <div className="App">
-      <Test/>
+      <Main/>
     </div>
   );
 }

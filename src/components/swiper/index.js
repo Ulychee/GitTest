@@ -1,8 +1,6 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
 import 'swiper/swiper.scss';
-
-// import './styles.css';
 import './styles.scss';
 
 export default () => {

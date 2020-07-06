@@ -5,8 +5,6 @@ import './styles.scss';
 
 export default () => {
     const params = {
-        slidesPerView: 1,
-        spaceBetween: 30,
         loop: true,
         pagination: {
           el: '.swiper-pagination',

@@ -1,8 +1,21 @@
 @import "~react-md/dist/react-md";
 @include react-md-utils;
 
+*{padding: 0;margin: 0;}
 
-.tabs{
-    width: 1024px;
-    background-color: red;
+.mainBody{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.tans{
+    width: 100%;
+}
+.button{
+    margin: 10px 20px;
+}
+.dialogTitle{
+    color: #1c9ec5;
 }

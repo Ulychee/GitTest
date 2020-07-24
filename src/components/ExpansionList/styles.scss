@@ -6,12 +6,14 @@
   position: relative;
   border-radius: 4px;
   box-shadow: 0 0 1px 1px #727272;
-  margin: 10px 0 100px 100px;
+  // margin: 10px 0 100px 100px;
+  margin: 10px 100px;
 }
 .show{
-  top: 50px;
+  top: 20px;
+  left: 300px;
   background-color: bisque;
-  position: absolute;
+  position: fixed;
   border-radius: 4px;
   box-shadow: 0 0 1px 1px #727272;
 }

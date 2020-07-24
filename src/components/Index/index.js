@@ -4,14 +4,16 @@ import Swiper from '../swiper'
 import MemoTest from '../useMemoTest'
 import ExpansionList from '../ExpansionList'
 import KuoZhanTest from '../Kuozhan'
-import {TabsManager, Tabs, TabPanels, TabPanel, Button, Dialog, DialogHeader, DialogTitle, DialogContent, DialogFooter} from 'react-md'
+import DialogModule from '../DialogMoudle'
+import {TabsManager, Tabs, TabPanels, TabPanel, Button} from 'react-md'
 import './styles.scss'
 
 export default function Main (){
     const tabs = ["Tab 1", "Tab 2", "Tab 3","Tab 4","Tab 5","Tab 6"];
     const [visible, setVisible ] = useState(false);
-    const [title, setTitle] = useState("Null-title");
-    const [content, setContent ] = useState("Null-content");
+    const [title, setTitle] = useState("module-title");
+    const [content, setContent ] = useState("moudle-content");
+    const [closeText,setCloseText] = useState('x')
     
     const list =[
         {
@@ -31,13 +33,20 @@ export default function Main (){
     const showDialog = () => {
         setTitle("Show-Dialog");
         setContent(" 0.0")
+        setCloseText("X")
         setVisible(true);
     }
     const testDialog = () => {
         setTitle("Test-Dialog");
         setContent(" ~.~")
+        setCloseText("CLOSE")
         setVisible(true)
     }
+
+    const onClose = () => {
+        setVisible(false)
+    }
+
     
     return (
         <div className="mainBody">
@@ -72,23 +81,13 @@ export default function Main (){
                         <Button onClick={testDialog}>
                             test dialog
                         </Button>
-                        <Dialog
-                            id="dialog"
+                        <DialogModule
+                            title={title}
+                            content={content}
                             visible={visible}
-                            onRequestClose={()=>{setVisible(false)}}
-                        >
-                            <DialogHeader>
-                                <DialogTitle className="dialogTitle">
-                                    {title}
-                                </DialogTitle>
-                            </DialogHeader>   
-                            <DialogContent>
-                                {content}
-                            </DialogContent>
-                            <DialogFooter>
-                                <Button onClick={()=>{setVisible(false)}}>Close</Button>
-                            </DialogFooter>
-                        </Dialog>
+                            closeText={closeText}
+                            onClose={onClose}
+                        />
                     </TabPanel>
                     <TabPanel>
                         <p style={{paddingTop:"10px",paddingLeft:"20px"}}>Panel 4</p>

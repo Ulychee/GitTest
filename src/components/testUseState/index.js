@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { TextField } from 'react-md'
 import "./styles.scss"
 
 export default ()=>{
@@ -22,7 +23,18 @@ export default ()=>{
 
     return(
         <div className="testBody">
-            <input value={userName}  type="text" placeholder="Input your name" onChange={getValue} />
+            {/* <input value={userName}  type="text" placeholder="Input your name" onChange={getValue} /> */}
+            <TextField
+                onChange={getValue}
+                label="Input your name"
+                value={userName}
+                id="aaa"
+                className="inputName"
+                // passwordIcon={{
+                //     visible:<FontIcon iconClassName="mdi mdi-check" />,
+                //     invisible:<FontIcon iconClassName="mdi mdi-check"/>
+                // }}
+            />
             <button type="button" onClick={handleClick}>拍一拍</button>
             <br/>
             <h2 onDoubleClick={doubleClick}>{value}</h2>

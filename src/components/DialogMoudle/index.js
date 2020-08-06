@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Dialog, DialogHeader, DialogTitle, DialogContent, DialogFooter} from 'react-md'
+import {Button, Dialog, DialogHeader, DialogTitle, DialogFooter} from 'react-md'
 
 export default ({title,content,visible,closeText,onClose}) => {
     
@@ -13,10 +13,8 @@ export default ({title,content,visible,closeText,onClose}) => {
                 <DialogTitle className="dialogTitle">
                     {title}
                 </DialogTitle>
-            </DialogHeader>   
-            <DialogContent>
-                {content}
-            </DialogContent>
+            </DialogHeader>
+            <div>{content}</div>
             <DialogFooter>
                 <Button onClick={onClose}>
                     {closeText}

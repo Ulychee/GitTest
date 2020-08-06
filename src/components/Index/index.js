@@ -5,11 +5,12 @@ import MemoTest from '../useMemoTest'
 import ExpansionList from '../ExpansionList'
 import KuoZhanTest from '../Kuozhan'
 import DialogModule from '../DialogMoudle'
+import OrderTest from '../FetchAndFocus'
 import {TabsManager, Tabs, TabPanels, TabPanel, Button} from 'react-md'
 import './styles.scss'
 
 export default function Main (){
-    const tabs = ["Tab 1", "Tab 2", "Tab 3","Tab 4","Tab 5","Tab 6"];
+    const tabs = ["Tab 1", "Tab 2", "Tab 3","Tab 4","Tab 5","Tab 6","Tab 7","Tab 8"];
     const [visible, setVisible ] = useState(false);
     const [title, setTitle] = useState("module-title");
     const [content, setContent ] = useState("moudle-content");
@@ -38,7 +39,7 @@ export default function Main (){
     }
     const testDialog = () => {
         setTitle("Test-Dialog");
-        setContent(" ~.~")
+        setContent(" ~.~ ")
         setCloseText("CLOSE")
         setVisible(true)
     }
@@ -46,7 +47,7 @@ export default function Main (){
     const onClose = () => {
         setVisible(false)
     }
-
+    const show = false
     
     return (
         <div className="mainBody">
@@ -54,8 +55,12 @@ export default function Main (){
                 <Tabs/>
                 <TabPanels>
                     <TabPanel>
-                        <p style={{paddingTop:"10px",paddingLeft:"20px"}}>Panel 6</p>
-                        <p style={{paddingTop:"10px",paddingLeft:"20px"}}>扩展运算符 —— “...”</p>
+                        <p >Panel 7</p>
+                        <OrderTest  show={show}/>
+                    </TabPanel>
+                    <TabPanel>
+                        <p>Panel 6</p>
+                        <p>扩展运算符 —— “...”</p>
                         {list.map((value,key)=>{
                             return(
                                 <KuoZhanTest
@@ -68,15 +73,15 @@ export default function Main (){
                         })}
                     </TabPanel>
                     <TabPanel>
-                        <p style={{paddingTop:"10px",paddingLeft:"20px"}}>Panel 5</p>
+                        <p>Panel 5</p>
                         <ExpansionList/>
                     </TabPanel>
                     <TabPanel>
-                        <p style={{paddingTop:"10px",paddingLeft:"20px"}}>Panel 2</p>
-                        <Swiper/>
+                        <p>Panel 4</p>
+                        <MemoTest/>
                     </TabPanel>
                     <TabPanel>
-                        <p style={{paddingTop:"10px",paddingLeft:"20px"}}>Panel 3</p>
+                        <p>Panel 3</p>
                         <Button onClick={showDialog} className="button">Show Dialog</Button>
                         <Button onClick={testDialog}>
                             test dialog
@@ -90,13 +95,14 @@ export default function Main (){
                         />
                     </TabPanel>
                     <TabPanel>
-                        <p style={{paddingTop:"10px",paddingLeft:"20px"}}>Panel 4</p>
-                        <MemoTest/>
+                        <p>Panel 2</p>
+                        <Swiper/>
                     </TabPanel>
                     <TabPanel>
-                    <p style={{paddingTop:"10px",paddingLeft:"20px"}}>Panel 1</p>
+                        <p>Panel 1</p>
                         <Test className="test"/>
                     </TabPanel>
+                    
                 </TabPanels>
             </TabsManager>
         </div>

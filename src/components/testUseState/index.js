@@ -35,7 +35,7 @@ export default ()=>{
                 //     invisible:<FontIcon iconClassName="mdi mdi-check"/>
                 // }}
             />
-            <button type="button" onClick={handleClick}>拍一拍</button>
+            <button type="button" onClick={handleClick} className="button">拍一拍</button>
             <br/>
             <h2 onDoubleClick={doubleClick}>{value}</h2>
             <div id="pailepai" style={{display:"none",color:"grey"}}>ni pai le pai {value}</div>

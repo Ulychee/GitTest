@@ -27,12 +27,12 @@ export default function FetchAndFocus ( {show} ) {
         <div className="body">
             <TextField id="textField"/>
             <br/><hr/>
-            <button className="orderButton" id="ddd" onClick={()=>setNum(num=>num-1)}>Click Prev</button>
-            <button className="orderButton" id="ddd" onClick={()=>setNum(num=>num+1)}>Click Next</button>
+            <button className="button" id="ddd" onClick={()=>{num<2?setNum(1):setNum(num=>num-1);console.log(num)}}>Click Prev</button>
+            <button className="button" id="ddd" onClick={()=>setNum(num=>num+1)}>Click Next</button>
             <h1>{pokemon.name}</h1>
             <img src={pokemon.sprites?.front_default} alt=""  onClick={focusTextField}/>
             <br/>
-            {console.log(show)}
+            {/* {console.log(show)} */}
             { show ? <dvi>1111111</dvi> : <div>2222222</div>}
         </div>
     )

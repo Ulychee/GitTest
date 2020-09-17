@@ -5,7 +5,8 @@ import MemoTest from '../useMemoTest'
 import ExpansionList from '../ExpansionList'
 import KuoZhanTest from '../Kuozhan'
 import DialogModule from '../DialogMoudle'
-import OrderTest from '../FetchAndFocus'
+import FetchAndFocus from '../FetchAndFocus'
+import AntDTest from '../AntDTest'
 import {TabsManager, Tabs, TabPanels, TabPanel, Button} from 'react-md'
 import './styles.scss'
 
@@ -15,21 +16,6 @@ export default function Main (){
     const [title, setTitle] = useState("module-title");
     const [content, setContent ] = useState("moudle-content");
     const [closeText,setCloseText] = useState('x')
-    
-    const list =[
-        {
-            value:"test1",
-            id:'1'
-        },
-        {
-            value:"test2",
-            id:'2'
-        },
-        {
-            value:"test3",
-            id:'3'
-        },
-    ]
 
     const showDialog = () => {
         setTitle("Show-Dialog");
@@ -54,13 +40,17 @@ export default function Main (){
             <TabsManager tabs={tabs} className="tabs">
                 <Tabs/>
                 <TabPanels>
-                    <TabPanel>
-                        <p >Panel 7</p>
-                        <OrderTest  show={show}/>
+                    <TabPanel className="tab">
+                        <p className="title">Panel 8</p>
+                        <AntDTest/>
                     </TabPanel>
                     <TabPanel>
-                        <p>Panel 6</p>
-                        <p>扩展运算符 —— “...”</p>
+                        <p className="title">Panel 7</p>
+                        <FetchAndFocus  show={show}/>
+                    </TabPanel>
+                    <TabPanel>
+                        <p className="title">Panel 6</p>
+                        <p className="title">扩展运算符 —— “...”</p>
                         {list.map((value,key)=>{
                             return(
                                 <KuoZhanTest
@@ -73,16 +63,18 @@ export default function Main (){
                         })}
                     </TabPanel>
                     <TabPanel>
-                        <p>Panel 5</p>
+                        <p className="title">Panel 5</p>
                         <ExpansionList/>
                     </TabPanel>
                     <TabPanel>
-                        <p>Panel 4</p>
+                        <p className="title">Panel 4</p>
                         <MemoTest/>
                     </TabPanel>
                     <TabPanel>
-                        <p>Panel 3</p>
-                        <Button onClick={showDialog} className="button">Show Dialog</Button>
+                        <p className="title">Panel 3</p>
+                        <Button onClick={showDialog}>
+                            Show Dialog
+                        </Button>
                         <Button onClick={testDialog}>
                             test dialog
                         </Button>
@@ -95,11 +87,11 @@ export default function Main (){
                         />
                     </TabPanel>
                     <TabPanel>
-                        <p>Panel 2</p>
+                        <p className="title">Panel 2</p>
                         <Swiper/>
                     </TabPanel>
                     <TabPanel>
-                        <p>Panel 1</p>
+                        <p className="title">Panel 1</p>
                         <Test className="test"/>
                     </TabPanel>
                     
@@ -108,3 +100,18 @@ export default function Main (){
         </div>
     )
 }
+
+const list =[
+    {
+        value:"test1",
+        id:'1'
+    },
+    {
+        value:"test2",
+        id:'2'
+    },
+    {
+        value:"test3",
+        id:'3'
+    },
+]

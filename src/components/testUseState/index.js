@@ -5,6 +5,7 @@ import "./styles.scss"
 export default ()=>{
     const [userName,setUserName] = useState();
     const [value,setValue] = useState("DiDiDi");
+    const [test,setTest] = useState(["111","222","333"])
 
     const getValue = e => {
         setUserName(e.target.value)
@@ -19,6 +20,10 @@ export default ()=>{
         setTimeout(() => {
             pai.style.display = "none";
         }, 2000);
+    }
+    const changeName = () => {
+        setTest({...test,name:"111"})
+        setTest([...test,"222","3333"]) //使用useState的setXXX对数组和对象赋值时，如果需要保留原来数据或修改对象中某一数据时，则需要使用扩展运算符 '... '
     }
 
     return(
@@ -39,6 +44,12 @@ export default ()=>{
             <br/>
             <h2 onDoubleClick={doubleClick}>{value}</h2>
             <div id="pailepai" style={{display:"none",color:"grey"}}>ni pai le pai {value}</div>
+            <div>
+                {/* <dvi>{test.name}</dvi>
+                <dvi>{test.age}</dvi> */}
+                <div>{test}</div>
+                <div className="button" onClick={changeName}>change</div>
+            </div>
         </div>
     )
 }

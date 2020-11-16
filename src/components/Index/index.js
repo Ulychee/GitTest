@@ -7,11 +7,13 @@ import KuoZhanTest from '../Kuozhan'
 import DialogModule from '../DialogMoudle'
 import FetchAndFocus from '../FetchAndFocus'
 import AntDTest from '../AntDTest'
+import ContextTest from '../contextTest'
+import ReducerTest from '../reducerTest'
 import {TabsManager, Tabs, TabPanels, TabPanel, Button} from 'react-md'
 import './styles.scss'
 
 export default function Main (){
-    const tabs = ["Tab 1", "Tab 2", "Tab 3","Tab 4","Tab 5","Tab 6","Tab 7","Tab 8"];
+    const tabs = ["Tab 1", "Tab 2", "Tab 3","Tab 4","Tab 5","Tab 6","Tab 7","Tab 8","Tab 9","Tab 10"];
     const [visible, setVisible ] = useState(false);
     const [title, setTitle] = useState("module-title");
     const [content, setContent ] = useState("moudle-content");
@@ -40,6 +42,14 @@ export default function Main (){
             <TabsManager tabs={tabs} className="tabs">
                 <Tabs/>
                 <TabPanels>
+                    <TabPanel className="tab">
+                        <p className="title">Panel 10</p>
+                        <ReducerTest/>
+                    </TabPanel>
+                    <TabPanel className="tab">
+                        <p className="title">Panel 9</p>
+                        <ContextTest/>
+                    </TabPanel>
                     <TabPanel className="tab">
                         <p className="title">Panel 8</p>
                         <AntDTest/>

@@ -1,14 +1,28 @@
 import React from 'react';
-import Children from './Children'
+import ContextTest from './ContextTest'
+import Father from './Fahert-Child'
+import FatherFunc from './FuncFather-Child'
 
 export const UserContext = React.createContext('')
 
 const Index = () => {
 
   return (
-      <UserContext.Provider value={'chuan-zhi'}>
-        <Children/>
-      </UserContext.Provider>
+      <>
+        <div>
+          使用useContext传值：<ContextTest />
+        </div>
+
+        <div style={{marginTop:"50px"}}>
+          直接传值：
+          <Father />
+        </div>
+
+        <div>
+          父组件获取子组件的方法
+          <FatherFunc />
+        </div>
+      </>
   )
 }
 

@@ -8,7 +8,7 @@ export default function Children() {
   return (
     <div>
 
-      {value}
+      this is value from Father.js:{value}
 
       {/* <UserContext.Consumer>
         {
